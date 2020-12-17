@@ -1,6 +1,6 @@
 module UncertaintyQuantification
 
-using LinearAlgebra, DataFrames, FiniteDifferences, Dierckx, Sobol, HaltonSequences, Reexport, Accessors, Bootstrap
+using LinearAlgebra, DataFrames, FiniteDifferences, Dierckx, Sobol, HaltonSequences, Reexport, Accessors, Bootstrap, PolyChaos
 
 @reexport using Distributions
 
@@ -26,6 +26,7 @@ export Parameter,
 
       Model,
       PolyharmonicSpline,
+      PolynomialChaosExpansion,
 
       LineSampling,
       MonteCarlo,
@@ -58,6 +59,7 @@ include("inputs/copulas/gaussian.jl")
 
 include("models/model.jl")
 include("models/polyharmonicspline.jl")
+include("models/polynomialchaosexpansion.jl")
 
 include("sensitivity/gradient.jl")
 
